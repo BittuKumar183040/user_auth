@@ -1,6 +1,6 @@
 # Auth Service
 
-This is an authentication service built using **FastAPI**.
+This is an authentication service built using **FastAPI** and sqllite
 
 ## Features
 
@@ -32,10 +32,14 @@ This is an authentication service built using **FastAPI**.
 	source venv/bin/activate  # On Windows: venv\Scripts\activate
 	```
 
-3. Install dependencies:
+
+3. Install dependencies: (Choose one of the below)
 
 	```bash
-	pip install -r requirements.txt
+		pip install "fastapi[standard]" jwt sqlalchemy
+	```
+	```bash
+		pip install -r requirements.txt
 	```
 
 ## Running the Application

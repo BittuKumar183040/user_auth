@@ -23,7 +23,7 @@ class Signup(BaseModel):
 	email: str
 class Forgot(BaseModel):
   email:str
-  password: str
+  new_password: str
  
 def create_jwt_token(fullname:str, username: str, email: str):
 	payload = {
@@ -72,7 +72,7 @@ def forgot_password(forgot: Forgot, db: Session = Depends(get_db)):
   if not user:
     raise HTTPException(status_code=404, detail="Email not found")
   else:
-    user.password = forgot.password
+    user.password = forgot.new_password
     db.commit()
     return {"status": "Password updated successfully", "type": "success"}
 
